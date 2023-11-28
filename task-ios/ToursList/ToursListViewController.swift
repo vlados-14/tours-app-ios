@@ -17,6 +17,7 @@ class ToursListViewController: UIViewController {
     private let tourCellId = "tourCellId"
     
     weak var setCurrentPageDelegate: SetCurrentPageDelegate?
+    weak var openDetailsScreenDelegate: OpenDetailsScreenDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,14 @@ extension ToursListViewController: View {
         
         reactor.state.map { $0.sections }
             .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                if let toursData = reactor.currentState.toursListData, let openDetailsDelegate = self?.openDetailsScreenDelegate {
+                    openDetailsDelegate.openDetailsScreenFor(tour: toursData[indexPath.row])
+                }
+            })
             .disposed(by: disposeBag)
     }
 }

@@ -13,6 +13,10 @@ protocol SetCurrentPageDelegate: AnyObject {
     func currentPage(index: Int)
 }
 
+protocol OpenDetailsScreenDelegate: AnyObject {
+    func openDetailsScreenFor(tour: Tour)
+}
+
 class ToursListContainerVC: UIViewController {
     var disposeBag = DisposeBag()
     
@@ -50,6 +54,9 @@ class ToursListContainerVC: UIViewController {
         
         allToursListVC.setCurrentPageDelegate = self
         top5ToursListVC.setCurrentPageDelegate = self
+        
+        allToursListVC.openDetailsScreenDelegate = self
+        top5ToursListVC.openDetailsScreenDelegate = self
         
         pages.append(allToursListVC)
         pages.append(top5ToursListVC)
@@ -128,6 +135,14 @@ extension ToursListContainerVC: SetCurrentPageDelegate {
     func currentPage(index: Int) {
         currentIndex = index
         segmentedControl.selectedSegmentIndex = currentIndex
+    }
+}
+
+extension ToursListContainerVC: OpenDetailsScreenDelegate {
+    func openDetailsScreenFor(tour: Tour) {
+        let detailsViewController = TourDetailsViewController()
+        detailsViewController.title = tour.title
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
 
