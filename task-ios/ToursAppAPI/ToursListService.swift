@@ -27,7 +27,7 @@ final class ToursListService: ToursListProtocol {
         config.request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         return config.session.rx.response(request: config.request)
-            .map{ result in
+            .map { result in
                 do {
                     let decoded = try JSONDecoder().decode([Tour].self, from: result.data)
                     return decoded

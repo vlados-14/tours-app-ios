@@ -14,6 +14,8 @@
 		9617694F2B16109C004E9CD0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617694E2B16109C004E9CD0 /* Network.swift */; };
 		961769512B16120D004E9CD0 /* ToursListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769502B16120D004E9CD0 /* ToursListService.swift */; };
 		961769542B161284004E9CD0 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769532B161284004E9CD0 /* Tour.swift */; };
+		961769562B162465004E9CD0 /* ToursListSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769552B162465004E9CD0 /* ToursListSectionModel.swift */; };
+		961769582B162487004E9CD0 /* TourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769572B162487004E9CD0 /* TourCell.swift */; };
 		96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F72B153EC000D24687 /* AppDelegate.swift */; };
 		96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F92B153EC000D24687 /* SceneDelegate.swift */; };
 		96DBE6FC2B153EC000D24687 /* ToursListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */; };
@@ -33,6 +35,8 @@
 		9617694E2B16109C004E9CD0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		961769502B16120D004E9CD0 /* ToursListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListService.swift; sourceTree = "<group>"; };
 		961769532B161284004E9CD0 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
+		961769552B162465004E9CD0 /* ToursListSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListSectionModel.swift; sourceTree = "<group>"; };
+		961769572B162487004E9CD0 /* TourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourCell.swift; sourceTree = "<group>"; };
 		96DBE6F42B153EC000D24687 /* task-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "task-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DBE6F72B153EC000D24687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DBE6F92B153EC000D24687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		961769412B15F778004E9CD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				961769572B162487004E9CD0 /* TourCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				961769532B161284004E9CD0 /* Tour.swift */,
+				961769552B162465004E9CD0 /* ToursListSectionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,8 +289,10 @@
 				96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */,
 				961769472B15FB46004E9CD0 /* ToursListContainerVC.swift in Sources */,
 				96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */,
+				961769562B162465004E9CD0 /* ToursListSectionModel.swift in Sources */,
 				961769492B15FCB0004E9CD0 /* ToursContainerReactor.swift in Sources */,
 				961769452B15F852004E9CD0 /* Styles+UI.swift in Sources */,
+				961769582B162487004E9CD0 /* TourCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
