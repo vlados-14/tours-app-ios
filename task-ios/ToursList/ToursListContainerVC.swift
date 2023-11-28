@@ -34,8 +34,8 @@ class ToursListContainerVC: UIViewController {
     let top5ToursListVC: ToursListViewController
     
     init(reactor: ToursContainerReactor) {
-        allToursListVC = ToursListViewController(reactor: ToursListReactor(isTop5: false))
-        top5ToursListVC = ToursListViewController(reactor: ToursListReactor(isTop5: true))
+        allToursListVC = ToursListViewController(reactor: ToursListReactor(isTop5: false, provider: ToursListService()))
+        top5ToursListVC = ToursListViewController(reactor: ToursListReactor(isTop5: true, provider: ToursListService()))
         super.init(nibName: nil, bundle: nil)
         self.reactor = reactor
     }

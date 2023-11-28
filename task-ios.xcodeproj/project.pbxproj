@@ -11,6 +11,9 @@
 		961769472B15FB46004E9CD0 /* ToursListContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769462B15FB46004E9CD0 /* ToursListContainerVC.swift */; };
 		961769492B15FCB0004E9CD0 /* ToursContainerReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769482B15FCB0004E9CD0 /* ToursContainerReactor.swift */; };
 		9617694C2B15FD6A004E9CD0 /* ToursListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617694B2B15FD6A004E9CD0 /* ToursListReactor.swift */; };
+		9617694F2B16109C004E9CD0 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617694E2B16109C004E9CD0 /* Network.swift */; };
+		961769512B16120D004E9CD0 /* ToursListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769502B16120D004E9CD0 /* ToursListService.swift */; };
+		961769542B161284004E9CD0 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769532B161284004E9CD0 /* Tour.swift */; };
 		96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F72B153EC000D24687 /* AppDelegate.swift */; };
 		96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F92B153EC000D24687 /* SceneDelegate.swift */; };
 		96DBE6FC2B153EC000D24687 /* ToursListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */; };
@@ -27,6 +30,9 @@
 		961769462B15FB46004E9CD0 /* ToursListContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListContainerVC.swift; sourceTree = "<group>"; };
 		961769482B15FCB0004E9CD0 /* ToursContainerReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursContainerReactor.swift; sourceTree = "<group>"; };
 		9617694B2B15FD6A004E9CD0 /* ToursListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListReactor.swift; sourceTree = "<group>"; };
+		9617694E2B16109C004E9CD0 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		961769502B16120D004E9CD0 /* ToursListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListService.swift; sourceTree = "<group>"; };
+		961769532B161284004E9CD0 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		96DBE6F42B153EC000D24687 /* task-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "task-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DBE6F72B153EC000D24687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DBE6F92B153EC000D24687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,7 @@
 				961769462B15FB46004E9CD0 /* ToursListContainerVC.swift */,
 				96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */,
 				9617694A2B15FCB9004E9CD0 /* ViewModels */,
+				961769522B16125F004E9CD0 /* Models */,
 				961769412B15F778004E9CD0 /* Views */,
 			);
 			path = ToursList;
@@ -98,8 +105,18 @@
 		9617694D2B15FE00004E9CD0 /* ToursAppAPI */ = {
 			isa = PBXGroup;
 			children = (
+				9617694E2B16109C004E9CD0 /* Network.swift */,
+				961769502B16120D004E9CD0 /* ToursListService.swift */,
 			);
 			path = ToursAppAPI;
+			sourceTree = "<group>";
+		};
+		961769522B16125F004E9CD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				961769532B161284004E9CD0 /* Tour.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		96DBE6EB2B153EC000D24687 = {
@@ -259,7 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				96DBE6FC2B153EC000D24687 /* ToursListViewController.swift in Sources */,
+				961769512B16120D004E9CD0 /* ToursListService.swift in Sources */,
 				9617694C2B15FD6A004E9CD0 /* ToursListReactor.swift in Sources */,
+				961769542B161284004E9CD0 /* Tour.swift in Sources */,
+				9617694F2B16109C004E9CD0 /* Network.swift in Sources */,
 				96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */,
 				961769472B15FB46004E9CD0 /* ToursListContainerVC.swift in Sources */,
 				96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */,
