@@ -58,7 +58,6 @@ class ToursListViewController: UIViewController {
         $0.backgroundColor = UIColor.ToursApp.mainBackground
         $0.rowHeight = UITableView.automaticDimension
         $0.estimatedRowHeight = 80
-        $0.separatorStyle = .none
         $0.showsVerticalScrollIndicator = false
         $0.register(TourCell.self, forCellReuseIdentifier: tourCellId)
         return $0
