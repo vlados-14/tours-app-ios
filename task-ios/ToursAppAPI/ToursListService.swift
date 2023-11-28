@@ -19,23 +19,13 @@ final class ToursListService: ToursListProtocol {
     
     
     func fetchTours(isTop5: Bool) -> Single<[Tour]> {
-        guard var config = Network.shared.configureGeneralRequest(uriPath: isTop5 ? uriPathTop5Tours : uriPathAllTours, httpMethod: .get)
-        else {
+        let uriPath = isTop5 ? uriPathTop5Tours : uriPathAllTours
+        guard let config = Network.shared.configureGeneralRequest(uriPath: uriPath, httpMethod: .get) else {
             return Observable.empty().asSingle()
         }
-        
-        config.request.setValue("application/json", forHTTPHeaderField: "Accept")
-        
+
         return config.session.rx.response(request: config.request)
-            .map { result in
-                do {
-                    let decoded = try JSONDecoder().decode([Tour].self, from: result.data)
-                    return decoded
-                } catch {
-                    print(error)
-                    throw error
-                }
-            }
+            .map{ try JSONDecoder().decode([Tour].self, from: $0.data) }
             .observe(on: MainScheduler.instance)
             .asSingle()
             .catch { error in

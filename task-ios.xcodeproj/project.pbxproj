@@ -19,6 +19,7 @@
 		9617695B2B16310E004E9CD0 /* TourDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617695A2B16310E004E9CD0 /* TourDetailsViewController.swift */; };
 		9617695D2B16316A004E9CD0 /* TourDetailsReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617695C2B16316A004E9CD0 /* TourDetailsReactor.swift */; };
 		961769622B163969004E9CD0 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769612B163969004E9CD0 /* DetailsView.swift */; };
+		961769642B163EE2004E9CD0 /* TourDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769632B163EE2004E9CD0 /* TourDetailsService.swift */; };
 		96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F72B153EC000D24687 /* AppDelegate.swift */; };
 		96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F92B153EC000D24687 /* SceneDelegate.swift */; };
 		96DBE6FC2B153EC000D24687 /* ToursListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */; };
@@ -43,6 +44,7 @@
 		9617695A2B16310E004E9CD0 /* TourDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailsViewController.swift; sourceTree = "<group>"; };
 		9617695C2B16316A004E9CD0 /* TourDetailsReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailsReactor.swift; sourceTree = "<group>"; };
 		961769612B163969004E9CD0 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		961769632B163EE2004E9CD0 /* TourDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourDetailsService.swift; sourceTree = "<group>"; };
 		96DBE6F42B153EC000D24687 /* task-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "task-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DBE6F72B153EC000D24687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DBE6F92B153EC000D24687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				9617694E2B16109C004E9CD0 /* Network.swift */,
 				961769502B16120D004E9CD0 /* ToursListService.swift */,
+				961769632B163EE2004E9CD0 /* TourDetailsService.swift */,
 			);
 			path = ToursAppAPI;
 			sourceTree = "<group>";
@@ -190,9 +193,9 @@
 				96DBE7052B153EC500D24687 /* Info.plist */,
 				96DBE6F72B153EC000D24687 /* AppDelegate.swift */,
 				96DBE6F92B153EC000D24687 /* SceneDelegate.swift */,
+				961769442B15F852004E9CD0 /* Styles+UI.swift */,
 				9617694D2B15FE00004E9CD0 /* ToursAppAPI */,
 				961769402B15F75C004E9CD0 /* ToursList */,
-				961769442B15F852004E9CD0 /* Styles+UI.swift */,
 				961769592B1630D2004E9CD0 /* TourDetails */,
 			);
 			path = "task-ios";
@@ -326,6 +329,7 @@
 				961769512B16120D004E9CD0 /* ToursListService.swift in Sources */,
 				9617694C2B15FD6A004E9CD0 /* ToursListReactor.swift in Sources */,
 				961769542B161284004E9CD0 /* Tour.swift in Sources */,
+				961769642B163EE2004E9CD0 /* TourDetailsService.swift in Sources */,
 				9617694F2B16109C004E9CD0 /* Network.swift in Sources */,
 				96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */,
 				961769472B15FB46004E9CD0 /* ToursListContainerVC.swift in Sources */,

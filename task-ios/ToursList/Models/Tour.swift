@@ -13,4 +13,7 @@ struct Tour: Codable {
     let thumb: String
     let startDate, endDate: String
     let price: String
+    
+    let image: String?
+    let description: String?
 }

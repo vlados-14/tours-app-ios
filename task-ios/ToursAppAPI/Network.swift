@@ -21,6 +21,7 @@ class Network {
         case unknownError(description: String)
         
         case cannotLoadTours(description: String)
+        case cannotLoadTourDetails(description: String)
     }
     
     enum HttpMethod: String {
@@ -61,6 +62,7 @@ extension Network {
         
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         if let params = params, !putParamsInUrl {
             let postBodyString = encodeParams(params: params)
