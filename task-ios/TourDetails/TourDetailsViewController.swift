@@ -67,6 +67,16 @@ class TourDetailsViewController: UIViewController {
             detailsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
         ])
     }
+    
+    private func convertDateToReadableFormat(dateString: String) -> String {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withFullDate]
+        let date = dateFormatter.date(from: dateString)
+        if let formatted = date?.formatted(date: .numeric, time: .omitted) {
+            return formatted
+        }
+        return ""
+    }
 }
 
 extension TourDetailsViewController: View {
@@ -80,7 +90,8 @@ extension TourDetailsViewController: View {
                 
                 detailsView.titleLabel.text = tourDetails.title
                 detailsView.descriptionLabel.text = tourDetails.description
-                detailsView.bookableIntervalLabel.text = "\(tourDetails.startDate) - \(tourDetails.endDate)"
+                
+                detailsView.bookableIntervalLabel.text = "Valid Period: \(convertDateToReadableFormat(dateString: tourDetails.startDate)) - \(convertDateToReadableFormat(dateString: tourDetails.endDate))"
                 
                 if let imageUrlString = tourDetails.image, let url = URL(string: imageUrlString) {
                     detailsView.imageView.sd_setImage(with: url, placeholderImage: nil)

@@ -85,11 +85,19 @@ class TourCell: UITableViewCell {
     private func configureCell(tour: TourListItem) {
         tourTitleLabel.text = tour.title
         tourShortDescriptionLabel.text = tour.shortDescription
-        tourEndDateLabel.text = tour.endDate
+        setDateInReadableFormat(dateString: tour.endDate)
         tourPriceLabel.text = "\(tour.price)€"
         
         guard let url = URL(string: tour.thumb) else { return }
         tourImageView.sd_setImage(with: url, placeholderImage: nil)
+    }
+    
+    private func setDateInReadableFormat(dateString: String) {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withFullDate]
+        if let date = dateFormatter.date(from: dateString) {
+            tourEndDateLabel.text = "Available until: \(date.formatted(date: .numeric, time: .omitted))"
+        }
     }
     
     override func prepareForReuse() {
