@@ -9,22 +9,16 @@ import Foundation
 import RxSwift
 
 protocol TourDetailsProtocol {
-    func fetchDetails() -> Single<Tour>
+    func fetchDetails(tourId: String) -> Single<Tour>
 }
 
 final class TourDetailsService: TourDetailsProtocol {
     
-    let tourId: String
-    
-    private lazy var uriPathTourDetails = "/tours/\(tourId)"
+    private lazy var uriPathTourDetails = "/tours"
     private let uriPathContactInfo = "/contact"
     
-    init(tourId: String) {
-        self.tourId = tourId
-    }
-    
-    func fetchDetails() -> Single<Tour> {
-        guard let config = Network.shared.configureGeneralRequest(uriPath: uriPathTourDetails, httpMethod: .get) else {
+    func fetchDetails(tourId: String) -> Single<Tour> {
+        guard let config = Network.shared.configureGeneralRequest(uriPath: "\(uriPathTourDetails)/\(tourId)", httpMethod: .get) else {
             return Observable.empty().asSingle()
         }
 

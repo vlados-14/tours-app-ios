@@ -10,6 +10,7 @@ import ReactorKit
 class TourDetailsReactor: Reactor {
     
     let provider: TourDetailsProtocol
+    let tourId: String
     
     enum Action {
         case getTourDetailsData
@@ -30,15 +31,16 @@ class TourDetailsReactor: Reactor {
     
     let initialState: State
     
-    init(provider: TourDetailsProtocol) {
+    init(provider: TourDetailsProtocol, tourId: String) {
         self.initialState = State()
         self.provider = provider
+        self.tourId = tourId
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .getTourDetailsData:
-            let tourDetailsDataObsrv = provider.fetchDetails()
+            let tourDetailsDataObsrv = provider.fetchDetails(tourId: self.tourId)
                                             .asObservable()
                                             .flatMap { Observable.just(Mutation.setTourDetailsData($0)) }
                                             .catch { Observable.just(Mutation.setError($0)) }

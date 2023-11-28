@@ -10,7 +10,7 @@ import UIKit
 class LandscapeContainerVC: GenericViewControllerWithNavItems {
     
     let listViewController = ToursListContainerVC(reactor: ToursContainerReactor())
-    let detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(tourId: "")))
+    let detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(), tourId: ""))
     
     override func viewDidLoad() {
         super.viewDidLoad()

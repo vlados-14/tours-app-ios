@@ -115,7 +115,8 @@ extension ToursListContainerVC: SetCurrentPageDelegate {
 
 extension ToursListContainerVC: OpenDetailsScreenDelegate {
     func openDetailsScreenFor(tour: Tour) {
-        let detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(tourId: String(tour.id))))
+        let stringTourId = String(tour.id)
+        let detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(), tourId: stringTourId))
         detailsViewController.title = tour.title
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
