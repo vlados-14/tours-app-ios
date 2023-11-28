@@ -7,6 +7,7 @@
 
 import UIKit
 import ReactorKit
+import SDWebImage
 
 class TourDetailsViewController: UIViewController {
     
@@ -53,6 +54,10 @@ extension TourDetailsViewController: View {
                 detailsView.titleLabel.text = tourDetails.title
                 detailsView.descriptionLabel.text = tourDetails.description
                 detailsView.bookableIntervalLabel.text = "\(tourDetails.startDate) - \(tourDetails.endDate)"
+                
+                if let imageUrlString = tourDetails.image, let url = URL(string: imageUrlString) {
+                    detailsView.imageView.sd_setImage(with: url, placeholderImage: nil)
+                }
             })
             .disposed(by: disposeBag)
     }

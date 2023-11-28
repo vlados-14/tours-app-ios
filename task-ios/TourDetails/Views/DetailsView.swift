@@ -65,9 +65,7 @@ class DetailsView: UIView {
     
     lazy var imageView: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.image = UIImage(named: "imaginary_logo")
         $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = .green
         $0.heightAnchor.constraint(equalToConstant: imageViewHeight).isActive = true
         return $0
     }(UIImageView())

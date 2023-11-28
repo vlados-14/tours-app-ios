@@ -4,6 +4,7 @@ def shared_pods
   pod 'RxCocoa'
   pod 'ReactorKit'
   pod 'RxDataSources'
+  pod 'SDWebImage'
 end
 
 target 'task-ios' do

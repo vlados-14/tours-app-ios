@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TourCell: UITableViewCell {
     
@@ -55,8 +56,7 @@ class TourCell: UITableViewCell {
     
     lazy var tourImageView: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.contentMode = .scaleAspectFill
-        $0.backgroundColor = .systemGreen
+        $0.contentMode = .scaleAspectFit
         $0.widthAnchor.constraint(equalToConstant: iconSize.width).isActive = true
         $0.heightAnchor.constraint(equalToConstant: iconSize.height).isActive = true
         return $0
@@ -87,5 +87,17 @@ class TourCell: UITableViewCell {
         tourShortDescriptionLabel.text = tour.shortDescription
         tourEndDateLabel.text = tour.endDate
         tourPriceLabel.text = "\(tour.price)€"
+        
+        guard let url = URL(string: tour.thumb) else { return }
+        tourImageView.sd_setImage(with: url, placeholderImage: nil)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        tourTitleLabel.text = nil
+        tourShortDescriptionLabel.text = nil
+        tourPriceLabel.text = nil
+        tourEndDateLabel.text = nil
+        tourImageView.image = nil
     }
 }
