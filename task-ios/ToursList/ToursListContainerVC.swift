@@ -17,12 +17,10 @@ protocol OpenDetailsScreenDelegate: AnyObject {
     func openDetailsScreenFor(tour: Tour)
 }
 
-class ToursListContainerVC: UIViewController {
+class ToursListContainerVC: GenericViewControllerWithNavItems {
     var disposeBag = DisposeBag()
     
-    fileprivate var currentIndex = 0
-    
-    private let navBarImageSize = CGSize(width: 32, height: 32)
+    private var currentIndex = 0
     
     lazy var segmentedControl: CustomSegmentedControl = {
         $0.addTarget(self, action: #selector(switchPage), for: .valueChanged)
@@ -80,8 +78,6 @@ class ToursListContainerVC: UIViewController {
             pageViewController.view.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             pageViewController.view.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor)
         ])
-        
-        setupNavigationBarItems()
     }
     
     @objc func switchPage() {
@@ -90,27 +86,6 @@ class ToursListContainerVC: UIViewController {
         
         self.pageViewController.setViewControllers([self.pages[self.segmentedControl.selectedSegmentIndex]], direction: direction, animated: true)
     }
-    
-    private func setupNavigationBarItems() {
-        //should be added with a custom image
-        let moreButton = UIBarButtonItem(title: "...", style: .plain, target: self, action: #selector(handleMore))
-        moreButton.tintColor = .black
-        
-        guard let logoImage = UIImage(named: "imaginary_logo") else { return }
-        let logo = UIBarButtonItem(image: UIImage.resize(image: logoImage, targetSize: navBarImageSize), style: .plain, target: self, action: #selector(handleLogoTapped))
-        
-        let title = UIBarButtonItem(title: "Tourify App", style: .plain, target: self, action: #selector(handleTitle))
-        title.tintColor = .black
-        
-        navigationItem.leftBarButtonItems = [logo,title]
-        navigationItem.rightBarButtonItem = moreButton
-    }
-    
-    @objc private func handleLogoTapped() {}
-    
-    @objc private func handleMore() {}
-                                             
-    @objc private func handleTitle() {}
 }
 
 extension ToursListContainerVC: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
@@ -151,17 +126,5 @@ extension ToursListContainerVC: View {
     
     func bind(reactor: ToursContainerReactor) {
         
-    }
-}
-
-class CustomSegmentedControl: UISegmentedControl {
-    
-    //Custom class created in case we need to customize the appearance of the segmented control
-    override init(items: [Any]?) {
-        super.init(items: items)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
