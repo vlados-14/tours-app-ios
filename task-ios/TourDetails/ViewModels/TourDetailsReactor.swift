@@ -10,7 +10,7 @@ import ReactorKit
 class TourDetailsReactor: Reactor {
     
     let provider: TourDetailsProtocol
-    let tourId: String
+    var tourId: String
     
     enum Action {
         case getTourDetailsData

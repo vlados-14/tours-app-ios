@@ -17,10 +17,16 @@ protocol OpenDetailsScreenDelegate: AnyObject {
     func openDetailsScreenFor(tour: Tour)
 }
 
+protocol DisplayDetailsDelegate: AnyObject {
+    func displayDetails(tour: Tour)
+}
+
 class ToursListContainerVC: GenericViewControllerWithNavItems {
     var disposeBag = DisposeBag()
     
     private var currentIndex = 0
+    
+    weak var displayDetailsInLandscapeDelegate: DisplayDetailsInLandscapeDelegate?
     
     lazy var segmentedControl: CustomSegmentedControl = {
         $0.addTarget(self, action: #selector(switchPage), for: .valueChanged)
@@ -55,6 +61,9 @@ class ToursListContainerVC: GenericViewControllerWithNavItems {
         
         allToursListVC.openDetailsScreenDelegate = self
         top5ToursListVC.openDetailsScreenDelegate = self
+        
+        allToursListVC.displayDetailsDelegate = self
+        top5ToursListVC.displayDetailsDelegate = self
         
         pages.append(allToursListVC)
         pages.append(top5ToursListVC)
@@ -119,6 +128,13 @@ extension ToursListContainerVC: OpenDetailsScreenDelegate {
         let detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(), tourId: stringTourId))
         detailsViewController.title = tour.title
         navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+}
+
+extension ToursListContainerVC: DisplayDetailsDelegate {
+    func displayDetails(tour: Tour) {
+        guard let landscapeScreenDelegate = displayDetailsInLandscapeDelegate else { return }
+        landscapeScreenDelegate.displayDetailsFor(tour: tour)
     }
 }
 

@@ -7,14 +7,20 @@
 
 import UIKit
 
+protocol DisplayDetailsInLandscapeDelegate: AnyObject {
+    func displayDetailsFor(tour: Tour)
+}
+
 class LandscapeContainerVC: GenericViewControllerWithNavItems {
     
     let listViewController = ToursListContainerVC(reactor: ToursContainerReactor())
-    let detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(), tourId: ""))
+    var detailsViewController = TourDetailsViewController(reactor: TourDetailsReactor(provider: TourDetailsService(), tourId: ""))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ToursApp.mainBackground
+        
+        listViewController.displayDetailsInLandscapeDelegate = self
         
         addChild(listViewController)
         addChild(detailsViewController)
@@ -36,5 +42,12 @@ class LandscapeContainerVC: GenericViewControllerWithNavItems {
             detailsViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             detailsViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+    }
+}
+
+extension LandscapeContainerVC: DisplayDetailsInLandscapeDelegate {
+    func displayDetailsFor(tour: Tour) {
+        detailsViewController.reactor?.tourId = String(tour.id)
+        detailsViewController.reactor?.action.onNext(.getTourDetailsData)
     }
 }

@@ -18,6 +18,7 @@ class ToursListViewController: UIViewController {
     
     weak var setCurrentPageDelegate: SetCurrentPageDelegate?
     weak var openDetailsScreenDelegate: OpenDetailsScreenDelegate?
+    weak var displayDetailsDelegate: DisplayDetailsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +87,14 @@ extension ToursListViewController: View {
         
         tableView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
-                if let toursData = reactor.currentState.toursListData, let openDetailsDelegate = self?.openDetailsScreenDelegate {
+                guard let toursData = reactor.currentState.toursListData else { return }
+                
+                if UIDevice.current.orientation == .portrait {
+                    guard let openDetailsDelegate = self?.openDetailsScreenDelegate else { return }
                     openDetailsDelegate.openDetailsScreenFor(tour: toursData[indexPath.row])
+                } else if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+                    guard let displayDetailsLandscape = self?.displayDetailsDelegate else { return }
+                    displayDetailsLandscape.displayDetails(tour: toursData[indexPath.row])
                 }
             })
             .disposed(by: disposeBag)
