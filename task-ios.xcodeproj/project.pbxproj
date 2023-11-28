@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961769452B15F852004E9CD0 /* Styles+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769442B15F852004E9CD0 /* Styles+UI.swift */; };
+		961769472B15FB46004E9CD0 /* ToursListContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769462B15FB46004E9CD0 /* ToursListContainerVC.swift */; };
+		961769492B15FCB0004E9CD0 /* ToursContainerReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961769482B15FCB0004E9CD0 /* ToursContainerReactor.swift */; };
+		9617694C2B15FD6A004E9CD0 /* ToursListReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617694B2B15FD6A004E9CD0 /* ToursListReactor.swift */; };
 		96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F72B153EC000D24687 /* AppDelegate.swift */; };
 		96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6F92B153EC000D24687 /* SceneDelegate.swift */; };
-		96DBE6FC2B153EC000D24687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6FB2B153EC000D24687 /* ViewController.swift */; };
+		96DBE6FC2B153EC000D24687 /* ToursListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */; };
 		96DBE6FF2B153EC000D24687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DBE6FD2B153EC000D24687 /* Main.storyboard */; };
 		96DBE7012B153EC500D24687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96DBE7002B153EC500D24687 /* Assets.xcassets */; };
 		96DBE7042B153EC500D24687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DBE7022B153EC500D24687 /* LaunchScreen.storyboard */; };
@@ -19,10 +23,14 @@
 /* Begin PBXFileReference section */
 		08A501E70C16D57F27ADEF21 /* Pods-task-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-task-ios.release.xcconfig"; path = "Target Support Files/Pods-task-ios/Pods-task-ios.release.xcconfig"; sourceTree = "<group>"; };
 		5647DC4000203AD949CACB5B /* Pods-task-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-task-ios.debug.xcconfig"; path = "Target Support Files/Pods-task-ios/Pods-task-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		961769442B15F852004E9CD0 /* Styles+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Styles+UI.swift"; sourceTree = "<group>"; };
+		961769462B15FB46004E9CD0 /* ToursListContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListContainerVC.swift; sourceTree = "<group>"; };
+		961769482B15FCB0004E9CD0 /* ToursContainerReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursContainerReactor.swift; sourceTree = "<group>"; };
+		9617694B2B15FD6A004E9CD0 /* ToursListReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListReactor.swift; sourceTree = "<group>"; };
 		96DBE6F42B153EC000D24687 /* task-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "task-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DBE6F72B153EC000D24687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96DBE6F92B153EC000D24687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96DBE6FB2B153EC000D24687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursListViewController.swift; sourceTree = "<group>"; };
 		96DBE6FE2B153EC000D24687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96DBE7002B153EC500D24687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96DBE7032B153EC500D24687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,10 +58,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		961769402B15F75C004E9CD0 /* ToursList */ = {
+			isa = PBXGroup;
+			children = (
+				961769462B15FB46004E9CD0 /* ToursListContainerVC.swift */,
+				96DBE6FB2B153EC000D24687 /* ToursListViewController.swift */,
+				9617694A2B15FCB9004E9CD0 /* ViewModels */,
+				961769412B15F778004E9CD0 /* Views */,
+			);
+			path = ToursList;
+			sourceTree = "<group>";
+		};
+		961769412B15F778004E9CD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		961769422B15F7F5004E9CD0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				96DBE6FD2B153EC000D24687 /* Main.storyboard */,
+				96DBE7022B153EC500D24687 /* LaunchScreen.storyboard */,
+				96DBE7002B153EC500D24687 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9617694A2B15FCB9004E9CD0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				961769482B15FCB0004E9CD0 /* ToursContainerReactor.swift */,
+				9617694B2B15FD6A004E9CD0 /* ToursListReactor.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9617694D2B15FE00004E9CD0 /* ToursAppAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ToursAppAPI;
+			sourceTree = "<group>";
+		};
 		96DBE6EB2B153EC000D24687 = {
 			isa = PBXGroup;
 			children = (
 				96DBE6F62B153EC000D24687 /* task-ios */,
+				961769422B15F7F5004E9CD0 /* SupportingFiles */,
 				96DBE6F52B153EC000D24687 /* Products */,
 				BF064EBF33F861CE2B5E4E34 /* Pods */,
 				751FBD8213577D47627E74CA /* Frameworks */,
@@ -71,13 +124,12 @@
 		96DBE6F62B153EC000D24687 /* task-ios */ = {
 			isa = PBXGroup;
 			children = (
+				96DBE7052B153EC500D24687 /* Info.plist */,
 				96DBE6F72B153EC000D24687 /* AppDelegate.swift */,
 				96DBE6F92B153EC000D24687 /* SceneDelegate.swift */,
-				96DBE6FB2B153EC000D24687 /* ViewController.swift */,
-				96DBE6FD2B153EC000D24687 /* Main.storyboard */,
-				96DBE7002B153EC500D24687 /* Assets.xcassets */,
-				96DBE7022B153EC500D24687 /* LaunchScreen.storyboard */,
-				96DBE7052B153EC500D24687 /* Info.plist */,
+				9617694D2B15FE00004E9CD0 /* ToursAppAPI */,
+				961769402B15F75C004E9CD0 /* ToursList */,
+				961769442B15F852004E9CD0 /* Styles+UI.swift */,
 			);
 			path = "task-ios";
 			sourceTree = "<group>";
@@ -206,9 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DBE6FC2B153EC000D24687 /* ViewController.swift in Sources */,
+				96DBE6FC2B153EC000D24687 /* ToursListViewController.swift in Sources */,
+				9617694C2B15FD6A004E9CD0 /* ToursListReactor.swift in Sources */,
 				96DBE6F82B153EC000D24687 /* AppDelegate.swift in Sources */,
+				961769472B15FB46004E9CD0 /* ToursListContainerVC.swift in Sources */,
 				96DBE6FA2B153EC000D24687 /* SceneDelegate.swift in Sources */,
+				961769492B15FCB0004E9CD0 /* ToursContainerReactor.swift in Sources */,
+				961769452B15F852004E9CD0 /* Styles+UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
